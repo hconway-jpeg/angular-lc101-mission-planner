@@ -27,4 +27,15 @@ export class CrewComponent implements OnInit {
     this.crew.splice(index, 1);
   }
 
+  memberBeingEdited: object = null;
+
+  edit(member: object) {
+    this.memberBeingEdited = member;
+ }
+
+ save(name: string, member: object) {
+  member['name'] = name;
+  this.memberBeingEdited = null;
+  }
+
 }
